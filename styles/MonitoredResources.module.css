@@ -1,0 +1,210 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  overflow: auto;
+  height: calc(100vh - var(--header-height));
+  width: 100vw;
+}
+.contentLoaderContainer {
+  display: grid;
+  place-items: center;
+  height: inherit;
+}
+.selector {
+  position: relative;
+  height: calc(100vh - var(--header-height));
+  max-height: calc(100vh - var(--header-height));
+  width: var(--selector-width);
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.selector::-webkit-scrollbar {
+  display: none;
+}
+
+.selectorDetails {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 5px;
+}
+.searchResults {
+  padding: 5px;
+}
+.content {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: calc(100vh - var(--header-height));
+  position: relative;
+  width: calc(100vw - var(--selector-width));
+}
+.chartContainer {
+  height: var(--chart-height);
+}
+.monitoredResourceContainer {
+  height: calc(100vh - var(--header-height) - var(--chart-height));
+  max-height: calc(100vh - var(--header-height) - var(--chart-height));
+  position: relative;
+  overflow-y: scroll;
+}
+#monitoredResourceHeader {
+  position: sticky;
+  top: 0;
+  height: 2rem;
+  font-weight: 600;
+  background-color: hsl(0, 0%, 99%);
+}
+.collapseSelector {
+  right: 0;
+}
+.exportButton {
+  width: 300px;
+  height: 2rem;
+  padding: 3px;
+  margin: 5px;
+
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(-45deg,#f47e43,#fb7272);
+  box-shadow: 0 0 2px hsl(0, 0%, 65%);
+
+	border: none;
+  border-radius: 5px;
+}
+.exportButtonDownloading {
+  width: 300px;
+  height: 2rem;
+  padding: 3px;
+  margin: 5px;
+
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(-45deg,hsl(50, 89%, 58%),hsl(30, 94%, 68%));
+	background-size: 400% 400%;
+  box-shadow: 0 0 2px hsl(0, 0%, 65%);
+
+	border: none;
+  border-radius: 5px;
+
+  animation: gradient 4s ease infinite;
+}
+.exportButton:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to bottom right,hsl(20, 89%, 58%),hsl(0, 94%, 68%));
+}
+@keyframes gradient {
+  0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.search {
+  width: 300px;
+  height: 2rem;
+  padding: 3px;
+  margin: 5px;
+}
+
+.projectResult {
+  font-size: 0.75rem;
+  border-radius: 5px;
+  color: black;
+  background-color: hsl(0, 0%, 97%);
+  box-shadow: 0 0 2px hsl(0, 0%, 65%);
+  padding: 3px;
+  width: 300px;
+  margin: 5px;
+  border-radius: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.projectResult:hover {
+  color:hsl(20, 89%, 58%);
+  background-color: hsl(0, 0%, 94%);
+  cursor: pointer;
+}
+
+.projectResultSelected {
+  font-size: 0.75rem;
+  border-radius: 5px;
+  color: black;
+  background-color: hsl(0, 0%, 97%);
+  box-shadow: 0 0 2px hsl(0, 0%, 65%);
+  padding: 3px;
+  width: 300px;
+  margin: 5px;
+  border-radius: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.projectResultSelected:hover {
+  color:hsl(20, 89%, 58%);
+  background-color: hsl(0, 0%, 94%);
+  cursor: pointer;
+}
+.monitoredResource {
+  display: grid;
+  grid-template-columns: 450px minmax(100px, auto) 100px 100px 100px 100px;
+  align-items: center;
+  background-color: hsl(0, 0%, 97%);
+  box-shadow: 0 0 2px hsl(0, 0%, 65%);
+  padding: 3px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: .75rem;
+}
+
+.monitoredResource div {
+  display: inline-block;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.monitoredResource .editable {
+  background-color: white;
+  border: 1px solid hsl(0, 0%, 70%);
+  border-radius: 2px;
+  padding: 5px;
+}
+.monitoredResource input {
+  color:hsl(20, 89%, 58%);
+  display: inline-block;
+  width: 100%;
+  background-color: transparent;
+  font-size: inherit;
+}
+.coding div {
+  display: block;
+}
+.coding .codingDescription {
+  color: #6a767d;
+}
+.group {
+  box-shadow: 0 0 2px hsl(0, 0%, 65%);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  background-color: hsl(0, 0%, 99%);
+}
+.groupTitle {
+  font-weight: 600;
+}
+.monitoredResource:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 94%);
+}
+.monitoredResourceSelected {
+  background-color: hsl(22, 100%, 85%);
+}
+.monitoredResourceSelected:hover {
+  background-color: hsl(22, 100%, 91%);
+}

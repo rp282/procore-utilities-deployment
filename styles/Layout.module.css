@@ -1,0 +1,32 @@
+.signInContainer {
+    display: grid;
+    height: calc(100vh - var(--header-height));
+    width: 100vw;
+    place-items: center;
+}
+.signInContainer pre {
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: linear-gradient(-45deg,#f47e42,#fb7272,hsl(50, 89%, 58%),hsl(30, 94%, 68%));
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    animation: gradient 4s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
